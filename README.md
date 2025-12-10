@@ -1,16 +1,79 @@
-# React + Vite
+# Gestion de Stages et Alternances - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface web React pour la gestion des stages et alternances.
 
-Currently, two official plugins are available:
+## 🚀 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** : 18.2
+- **Vite** : 5.0
+- **React Router** : 6.20
+- **Axios** : 1.6
+- **Tailwind CSS** : 3.3
+- **Formik + Yup** : Validation des formulaires
 
-## React Compiler
+## 📋 Prérequis
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 18+ (ou 20+)
+- npm 9+
 
-## Expanding the ESLint configuration
+## ⚙️ Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Cloner le repository**
+```bash
+   git clone https://github.com/VotreUsername/gestion-stages-frontend.git
+   cd gestion-stages-frontend
+```
+
+2. **Installer les dépendances**
+```bash
+   npm install
+```
+
+3. **Créer le fichier `.env`**
+```env
+   VITE_API_BASE_URL=http://localhost:8080/api
+   VITE_APP_NAME=Gestion de Stages
+   VITE_TOKEN_KEY=gestion_stages_token
+```
+
+4. **Démarrer en mode développement**
+```bash
+   npm run dev
+```
+
+5. **Ouvrir le navigateur** : http://localhost:5173
+
+## 🏗️ Build pour Production
+```bash
+npm run build
+npm run preview
+```
+
+## 📁 Structure du Projet
+```
+frontend/
+├── public/
+├── src/
+│   ├── components/       # Composants réutilisables
+│   ├── pages/           # Pages de l'application
+│   ├── services/        # API calls (Axios)
+│   ├── context/         # Context API
+│   ├── hooks/           # Custom hooks
+│   ├── utils/           # Utilitaires
+│   └── routes/          # Configuration des routes
+├── .env                 # Variables d'environnement
+└── package.json
+```
+
+## 👥 Équipe
+
+- [Sahraoui Youness] - Frontend Developer
+- [Mjahdi Abdelouahab] - Frontend Developer
+
+## 🔗 Backend
+
+Le backend de ce projet : [gestion-stages-backend](https://github.com/VotreUsername/gestion-stages-backend)
+
+## 📄 Licence
+
+Projet académique.
