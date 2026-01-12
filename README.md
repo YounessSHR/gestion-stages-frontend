@@ -1,79 +1,131 @@
-# Gestion de Stages et Alternances - Frontend
+# LinkUp - Frontend
+## Plateforme de Gestion de Stages et Alternances
 
-Interface web React pour la gestion des stages et alternances.
+Frontend React + Vite pour LinkUp, plateforme moderne de gestion de stages et alternances avec une interface inspirée de LinkedIn.
 
 ## 🚀 Technologies
 
-- **React** : 18.2
-- **Vite** : 5.0
-- **React Router** : 6.20
-- **Axios** : 1.6
-- **Tailwind CSS** : 3.3
-- **Formik + Yup** : Validation des formulaires
+- **React** : 19.2.0
+- **Vite** : 7.2.4
+- **React Router** : 7.10.1
+- **Axios** : 1.13.2
+- **Tailwind CSS** : 3.4.14
+- **React Toastify** : 11.0.5
 
 ## 📋 Prérequis
 
-- Node.js 18+ (ou 20+)
-- npm 9+
+- Node.js 18+
+- npm ou yarn
 
 ## ⚙️ Installation
 
-1. **Cloner le repository**
+1. **Installer les dépendances**
 ```bash
-   git clone https://github.com/VotreUsername/gestion-stages-frontend.git
-   cd gestion-stages-frontend
+npm install
 ```
 
-2. **Installer les dépendances**
+2. **Configurer les variables d'environnement**
 ```bash
-   npm install
+cp .env.example .env
 ```
 
-3. **Créer le fichier `.env`**
-```env
-   VITE_API_BASE_URL=http://localhost:8080/api
-   VITE_APP_NAME=Gestion de Stages
-   VITE_TOKEN_KEY=gestion_stages_token
+Éditer `.env` et configurer :
+```
+VITE_API_BASE_URL=http://localhost:8080
+VITE_TOKEN_KEY=token
+VITE_APP_NAME=LinkUp
 ```
 
-4. **Démarrer en mode développement**
+3. **Lancer l'application**
 ```bash
-   npm run dev
+npm run dev
 ```
 
-5. **Ouvrir le navigateur** : http://localhost:5173
-
-## 🏗️ Build pour Production
-```bash
-npm run build
-npm run preview
-```
+L'application sera disponible sur : http://localhost:5173
 
 ## 📁 Structure du Projet
+
 ```
-frontend/
-├── public/
-├── src/
-│   ├── components/       # Composants réutilisables
-│   ├── pages/           # Pages de l'application
-│   ├── services/        # API calls (Axios)
-│   ├── context/         # Context API
-│   ├── hooks/           # Custom hooks
-│   ├── utils/           # Utilitaires
-│   └── routes/          # Configuration des routes
-├── .env                 # Variables d'environnement
-└── package.json
+src/
+├── components/        # Composants réutilisables
+│   ├── Navbar.jsx
+│   └── ProtectedRoute.jsx
+├── context/          # Contextes React
+│   └── AuthContext.jsx
+├── pages/            # Pages de l'application
+│   ├── Login.jsx
+│   ├── Register.jsx
+│   ├── etudiant/     # Pages Étudiant
+│   ├── entreprise/   # Pages Entreprise
+│   ├── admin/        # Pages Administration
+│   └── tuteur/       # Pages Tuteur
+└── services/         # Services API
+    ├── api.js
+    ├── authService.js
+    ├── offreService.js
+    ├── candidatureService.js
+    ├── conventionService.js
+    ├── suiviService.js
+    ├── userService.js
+    └── dashboardService.js
 ```
 
-## 👥 Équipe
+## 🔐 Authentification
 
-- [Sahraoui Youness] - Frontend Developer
-- [Mjahdi Abdelouahab] - Frontend Developer
+L'application utilise JWT pour l'authentification. Le token est stocké dans le localStorage et ajouté automatiquement aux requêtes API.
 
-## 🔗 Backend
+## 📱 Pages Disponibles
 
-Le backend de ce projet : [gestion-stages-backend](https://github.com/VotreUsername/gestion-stages-backend)
+### Pages Publiques
+- `/login` - Connexion
+- `/register` - Inscription
 
-## 📄 Licence
+### Pages Étudiant
+- `/etudiant/dashboard` - Tableau de bord
+- `/etudiant/offres` - Liste des offres
+- `/etudiant/candidatures` - Mes candidatures
+- `/etudiant/stage` - Mon stage et conventions
 
-Projet académique.
+### Pages Entreprise
+- `/entreprise/dashboard` - Tableau de bord
+- `/entreprise/offres` - Mes offres
+- `/entreprise/candidatures` - Candidatures reçues
+
+### Pages Administration
+- `/admin/dashboard` - Tableau de bord avec statistiques
+- `/admin/offres` - Validation des offres
+- `/admin/conventions` - Gestion des conventions
+- `/admin/suivis` - Assignation de tuteurs
+
+### Pages Tuteur
+- `/tuteur/dashboard` - Tableau de bord
+- `/tuteur/etudiants` - Mes étudiants
+
+## 🎨 Styling & Design
+
+L'application utilise Tailwind CSS avec un design moderne inspiré de LinkedIn :
+- Thème blanc professionnel
+- Colonne centrée pour le contenu principal
+- Navbar avec navigation intuitive
+- Footer avec copyright LinkUp
+- Responsive design (mobile-friendly)
+- États de chargement (spinners) pour toutes les actions
+- Notifications toast pour le feedback utilisateur
+
+## ✨ Fonctionnalités Avancées
+
+- **Pagination** : Navigation par pages pour les listes (offres, candidatures, etc.)
+- **Filtres Avancés** : Recherche et filtrage multi-critères pour les offres
+- **Notifications In-App** : Système de notifications en temps réel avec badge et dropdown
+- **Gestion CV** : Upload, téléchargement et visualisation des CV
+- **Performance** : Réponses rapides grâce au traitement asynchrone côté backend
+
+## 📝 Notes
+
+- **Application complète** : Toutes les fonctionnalités principales sont implémentées
+- Assurez-vous que le backend est démarré sur le port 8080
+- Le frontend doit être démarré sur le port 5173 (Vite par défaut)
+
+## 🚀 Démonstration
+
+Pour un guide complet de démonstration, consultez `DEMO_WORKFLOW.md` dans le dossier backend.

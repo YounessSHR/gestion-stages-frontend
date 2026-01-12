@@ -14,4 +14,44 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F3F2EF;
+  color: #000000E6;
+}
+
+/* LinkedIn-style scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F2EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CFCFCF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A8A8;
+}
+
+/* LinkedIn-style buttons */
+@layer components {
+  .btn-linkedin-primary {
+    @apply bg-linkedin-primary text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-linkedin-primaryHover transition-colors;
+  }
+  
+  .btn-linkedin-secondary {
+    @apply bg-white text-linkedin-primary border border-linkedin-primary px-4 py-2 rounded-full font-semibold text-sm hover:bg-linkedin-gray-50 transition-colors;
+  }
+  
+  .card-linkedin {
+    @apply bg-white rounded-lg shadow-sm border border-linkedin-gray-200 p-6;
+  }
+  
+  .text-linkedin-primary-link {
+    @apply text-linkedin-primary hover:underline;
+  }
 }
